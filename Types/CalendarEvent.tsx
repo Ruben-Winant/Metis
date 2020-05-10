@@ -26,3 +26,5 @@ enum priorityTypes {
   normal,
   high,
 }
+
+//TODO ADD EVENTS TO SCREEN (MAKE SOME TEST EVENTS TO TRY IT OUT)
