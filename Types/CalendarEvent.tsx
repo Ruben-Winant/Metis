@@ -4,7 +4,8 @@ class CalendarEvent {
     eventDate: Date,
     description: string,
     attachment: any = null, //should be a file
-    priority: priorityTypes
+    priority: priorityTypes,
+    notify: boolean
   ) {
     this.title = title;
     this.attachment = attachment;
@@ -12,6 +13,7 @@ class CalendarEvent {
     this.eventDate = eventDate;
     this.title = title;
     this.priority = priority;
+    this.notify = notify;
   }
 
   public title: string;
@@ -19,6 +21,9 @@ class CalendarEvent {
   public description: string;
   public attachment: File;
   public priority: priorityTypes;
+  public notify: boolean;
+
+  //TODO make notification function
 }
 
 enum priorityTypes {
