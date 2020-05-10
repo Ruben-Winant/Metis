@@ -7,6 +7,8 @@ Features:
 - add files to events
 - minimalistic look with readability in mind
 - notifications when asked for
+- add serie reminders
+- integrate popular things (don't know about thios one yet :) )
 - and more
 
 made with react native!
