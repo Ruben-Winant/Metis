@@ -1,9 +1,9 @@
-class CalendarEvent {
+export class CalendarEvent {
   constructor(
     title: string,
     eventDate: Date,
     description: string,
-    attachment: any = null, //should be a file
+    attachment: any, //should be a file
     priority: priorityTypes,
     notify: boolean
   ) {
@@ -19,17 +19,15 @@ class CalendarEvent {
   public title: string;
   public eventDate: Date;
   public description: string;
-  public attachment: File;
+  public attachment: any;
   public priority: priorityTypes;
   public notify: boolean;
 
   //TODO make notification function
 }
 
-enum priorityTypes {
-  low,
-  normal,
-  high,
+export enum priorityTypes {
+  low = "#66d97d",
+  normal = "#66a3d9",
+  high = "#d96666",
 }
-
-//TODO ADD EVENTS TO SCREEN (MAKE SOME TEST EVENTS TO TRY IT OUT)
