@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Button } from "react-native";
+import { View, StatusBar } from "react-native";
 import DateListHeader from "../Component/DateListHeader";
 import DaysInMonthHorizontalList from "../Component/DaysInMonthHorizontalList";
 
@@ -22,6 +22,7 @@ class PlannerHomeScreen extends Component<
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
+        <StatusBar />
         <DateListHeader month={this.state.selectedMonth} />
         <DaysInMonthHorizontalList
           daysInMonth={31}

@@ -18,10 +18,9 @@ export default DateCardSquare;
 
 const styles = StyleSheet.create({
   dateCard: {
-    width: 60,
+    width: 36,
     display: "flex",
     flexDirection: "column",
-    alignContent: "space-around",
     alignItems: "center",
     alignSelf: "flex-start",
   },

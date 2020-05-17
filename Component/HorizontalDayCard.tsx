@@ -20,7 +20,15 @@ function HorizontalDayCard(props: any) {
   if (props.event != null) {
     eventRow = <DateEventCard event={props.event} />;
   } else {
-    eventRow = <Text>nothing planned today!</Text>;
+    eventRow = (
+      <View style={styles.eventContainerEmpty}>
+        <Text
+          style={{ marginLeft: 12, color: "lightgray", alignSelf: "flex-end" }}
+        >
+          Add event
+        </Text>
+      </View>
+    );
   }
   return (
     <View style={styles.daycard}>
@@ -39,6 +47,16 @@ const styles = StyleSheet.create({
     marginTop: 5,
     marginBottom: 5,
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
+  },
+  eventContainerEmpty: {
+    display: "flex",
+    width: "80%",
+    maxWidth: "86%",
+    backgroundColor: "white",
+    paddingRight: 8,
+    paddingTop: 8,
+    paddingBottom: 8,
+    borderRadius: 6,
   },
 });

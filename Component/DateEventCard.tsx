@@ -31,8 +31,8 @@ function DateEventCard(props: IDateEventCardProps) {
         <Icon
           style={{
             fontSize: 18,
-            marginLeft: 6,
-            marginRight: 6,
+            marginLeft: 10,
+            marginRight: 10,
           }}
           name="bell"
         />
@@ -44,8 +44,8 @@ function DateEventCard(props: IDateEventCardProps) {
         <Icon
           style={{
             fontSize: 18,
-            marginLeft: 6,
-            marginRight: 6,
+            marginLeft: 10,
+            marginRight: 10,
           }}
           name="bell-slash"
         />
@@ -59,8 +59,6 @@ function DateEventCard(props: IDateEventCardProps) {
         <Icon
           style={{
             fontSize: 18,
-            marginLeft: 10,
-            marginRight: 10,
             color: props.event.priority,
           }}
           name="circle"
@@ -75,7 +73,7 @@ function DateEventCard(props: IDateEventCardProps) {
           <Icon
             style={{
               fontSize: 18,
-              marginLeft: 6,
+              marginLeft: 10,
               marginRight: 6,
             }}
             name="edit"
@@ -91,22 +89,23 @@ export default DateEventCard;
 const styles = StyleSheet.create({
   eventContainerFull: {
     display: "flex",
-    width: "70%",
+    maxWidth: "80%",
     backgroundColor: "white",
-    paddingLeft: 4,
+    paddingLeft: 6,
     paddingRight: 4,
     paddingTop: 8,
     paddingBottom: 8,
-    borderRadius: 10,
-    alignSelf: "flex-end",
+    borderRadius: 8,
   },
   titleRow: {
+    display: "flex",
+    flexDirection: "row",
     fontSize: 18,
-    fontWeight: "600",
+    fontWeight: "800",
   },
   descriptionRow: {
-    marginLeft: 34,
-    maxWidth: "90%",
+    marginLeft: 20,
+    width: "88%",
   },
   buttonRow: {
     display: "flex",
