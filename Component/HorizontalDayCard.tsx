@@ -1,39 +1,31 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import HorizontalDayEventCard from "./HorizontalDayEventCard";
+import { View, Text, StyleSheet, AsyncStorage } from "react-native";
 import DateCardSquare from "./DateCardSquare";
 import DateEventCard from "./DateEventCard";
+import { CalendarEvent } from "../Types/CalendarEvent";
 
 function HorizontalDayCard(props: any) {
-  var events: any = [];
+  let events: any[] = [];
 
-  // props.events.forEach((element: any) => {
-  //   events.push(
-  //     <HorizontalDayEventCard
-  //       urgency={element.urgency}
-  //       eventDescription={element.eventDescription}
-  //     />
-  //   );
-  // });
-
-  let eventRow = null;
-  if (props.event != null) {
-    eventRow = <DateEventCard event={props.event} />;
+  if (props.events != null) {
+    props.events.forEach((event: CalendarEvent) => {
+      events.push(<DateEventCard event={event} />);
+    });
   } else {
-    eventRow = (
+    events = [
       <View style={styles.eventContainerEmpty}>
         <Text
           style={{ marginLeft: 12, color: "lightgray", alignSelf: "flex-end" }}
         >
           Add event
         </Text>
-      </View>
-    );
+      </View>,
+    ];
   }
   return (
     <View style={styles.daycard}>
       <DateCardSquare date={props.nrOfMonth} dayOfWeek={props.dayOfWeek} />
-      {eventRow}
+      {events}
     </View>
   );
 }

@@ -50,51 +50,42 @@ class DaysInMonthHorizontalList extends Component<
     false
   );
 
-  //GetEvents method that returns all events to display in the list
+  private cTest4 = new CalendarEvent(
+    "Sleeeeeeeep",
+    new Date(2020, 4, 13, 0, 0, 0, 0),
+    "Tired of cleaning",
+    null,
+    priorityTypes.high,
+    false
+  );
 
   render() {
-    let events: CalendarEvent[] = [this.cTest, this.cTest2, this.cTest3];
     var dayCards: any = [];
 
     for (let index = 1; index <= this.props.daysInMonth; index++) {
       var card = null;
-      //get day of the week
-      events.forEach((event) => {
-        let checkDate = new Date(
-          this.props.givenYear,
-          this.props.givenMonth,
-          index,
-          0,
-          0,
-          0,
-          0
-        );
-        let dayInWeek = checkDate.getDay();
-        //check if date of event occurs this month
-        if (event.eventDate.getTime() === checkDate.getTime()) {
-          //!ERROR => VINDT 3 EVENTS MAAR TOONT ENKEL DE LAATSTE
-          card = (
-            <HorizontalDayCard
-              key={"inv" + index}
-              nrOfMonth={index}
-              dayOfWeek={dayInWeek}
-              event={event}
-            />
-          );
-        } else {
-          card = (
-            <HorizontalDayCard
-              key={"in" + index}
-              nrOfMonth={index}
-              dayOfWeek={dayInWeek}
-            />
-          );
-        }
-      });
+      let checkDate = new Date(
+        this.props.givenYear,
+        this.props.givenMonth,
+        index,
+        0,
+        0,
+        0,
+        0
+      );
+      let dayInWeek = checkDate.getDay();
+      card = (
+        <HorizontalDayCard
+          key={"inv" + index}
+          nrOfMonth={index}
+          dayOfWeek={dayInWeek}
+        />
+      );
       dayCards.push(card);
     }
+
     return (
-      <View>
+      <View style={styles.list}>
         <ScrollView showsVerticalScrollIndicator={false}>{dayCards}</ScrollView>
       </View>
     );
@@ -102,3 +93,9 @@ class DaysInMonthHorizontalList extends Component<
 }
 
 export default DaysInMonthHorizontalList;
+
+const styles = StyleSheet.create({
+  list: {
+    marginBottom: 80,
+  },
+});

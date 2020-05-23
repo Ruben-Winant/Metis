@@ -63,7 +63,7 @@ function DateEventCard(props: IDateEventCardProps) {
           }}
           name="circle"
         />
-        {props.event.title}
+        {" " + props.event.title}
       </Text>
       <Text style={styles.descriptionRow}>{props.event.description}</Text>
       <View style={styles.buttonRow}>
@@ -89,9 +89,10 @@ export default DateEventCard;
 const styles = StyleSheet.create({
   eventContainerFull: {
     display: "flex",
-    maxWidth: "80%",
+    width: "80%",
+    maxWidth: "86%",
     backgroundColor: "white",
-    paddingLeft: 6,
+    paddingLeft: 10,
     paddingRight: 4,
     paddingTop: 8,
     paddingBottom: 8,
